@@ -58,6 +58,12 @@ type UserData = $ReadOnly<{|
 
 module.exports = {
   /**
+   * Set the autoLogAppEventsEnabled in FacebookSdk
+   */
+  setAutoLogAppEventsEnabled(isEnable: boolean) {
+    AppEventsLogger.setAutoLogAppEventsEnabled(isEnable);
+  },
+  /**
    * Sets the current event flushing behavior specifying when events
    * are sent back to Facebook servers.
    */

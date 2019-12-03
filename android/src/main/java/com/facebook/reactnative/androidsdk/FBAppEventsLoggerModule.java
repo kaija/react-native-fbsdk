@@ -22,6 +22,7 @@ package com.facebook.reactnative.androidsdk;
 
 import androidx.annotation.Nullable;
 
+import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsConstants;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.bridge.Arguments;
@@ -124,6 +125,15 @@ public class FBAppEventsLoggerModule extends ReactContextBaseJavaModule {
     @Override
     public String getName() {
         return NAME;
+    }
+
+    /**
+     * Set the autoLogAppEventsEnabled in FacebookSdk
+     * @param isEnable the auto log status.
+     */
+    @ReactMethod
+    public void setAutoLogAppEventsEnabled(Boolean isEnable) {
+        FacebookSdk.setAutoLogAppEventsEnabled(isEnable);
     }
 
     /**

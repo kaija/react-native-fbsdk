@@ -104,6 +104,11 @@ RCT_EXPORT_METHOD(setUserData:(NSDictionary *)userData)
                        country:userData[@"country"]];
 }
 
+RCT_EXPORT_METHOD(setAutoLogAppEventsEnabled:(BOOL)isEnable)
+{
+  [FBSDKSettings setAutoLogAppEventsEnabled:isEnable];
+}
+
 RCT_EXPORT_METHOD(setFlushBehavior:(FBSDKAppEventsFlushBehavior)flushBehavior)
 {
   [FBSDKAppEvents setFlushBehavior:flushBehavior];
